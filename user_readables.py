@@ -65,7 +65,7 @@ def translate_metrics(metrics: dict = None) -> dict:
         elif inside_share >= above_share and inside_share >= below_share:
             translations[k1]['share_analysis'] = f"Market {diction['hesitation']}. {_capitalize(diction['ema_band'])} {diction['within']} {diction['ohlc']} ({(above_share * 100):.2f}% overlap)."
         else:
-            translations[k1]['share_analysis'] = f"Buyer {diction['dominance']}. {_capitalize(diction['ema_band'])} below {diction['ohlc']} ({(above_share * 100):.2f}% of EMA band above {diction['ohlc']})."
+            translations[k1]['share_analysis'] = f"Buyer {diction['dominance']}. {_capitalize(diction['ema_band'])} below {diction['ohlc']} ({(below_share * 100):.2f}% of EMA band above {diction['ohlc']})."
 
     for k1 in translations.keys():
         print(f"['{k1}']")
